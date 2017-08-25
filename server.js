@@ -69,7 +69,7 @@ app.get('/ui/style.css', function (req, res) {
 app.get('/:pageNumber', function(req,res)
 {
     var pageNumber=req.params.pageNumber;
-    res.send(createTemplate(pageNumber));
+    res.send(createTemplate(pages(pageNumber)));
 });
 
 
