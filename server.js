@@ -18,6 +18,15 @@ app.get('/page-one', function(req,res)
     res.sendFile(path.join(__dirname, 'ui', 'page-one.html'));
 });
 
+app.get('/page-three', function(req,res)
+{
+    res.sendFile(path.join(__dirname, 'ui', 'page-three.html'));
+});
+app.get('/page-two', function(req,res)
+{
+    res.sendFile(path.join(__dirname, 'ui', 'page-two.html'));
+});
+
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
