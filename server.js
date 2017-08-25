@@ -15,7 +15,7 @@ app.get('/ui/style.css', function (req, res) {
 
 app.get('/page-one', function(req,res)
 {
-    res.send('<h1>This is page one.<h1>');
+    res.sendFile(path.join(__dirname, 'ui', 'page-one.html'));
 });
 
 app.get('/ui/madi.png', function (req, res) {
