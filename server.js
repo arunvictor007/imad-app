@@ -31,7 +31,7 @@ var htmlTemplate= `<html>
    <link rel="stylesheet" href="/ui/style.css" />
     </head>
 <body>
-    
+        <div class="container">
         <a href="/"> Return Home</a>
             <hr>
             <h1>${heading}</h1>
