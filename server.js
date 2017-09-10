@@ -10,20 +10,7 @@ var config=
     password:process.env.DB_PASSWORD,
     database:'arunvictor007'
 };
-var pool=new Pool(config);
-app.get('/test-db',function(req,res)
-{
-   pool.query('SELECT * FROM test',function(err,result)
-   {
-       if(err)
-       {
-           res.status(500).send(err.toString());
-       }else
-       {
-           res.send(JSON.stringify(result));
-       }
-   }); 
-});
+
 
 var app = express();
 app.use(morgan('combined'));
@@ -94,7 +81,20 @@ app.get('/:pageNumber', function(req,res)
     var pageNumber=req.params.pageNumber;
     res.send(createTemplate(pages[pageNumber]));
 });
-
+var pool=new Pool(config);
+app.get('/test-db',function(req,res)
+{
+   pool.query('SELECT * FROM test',function(err,result)
+   {
+       if(err)
+       {
+           res.status(500).send(err.toString());
+       }else
+       {
+           res.send(JSON.stringify(result));    
+       }
+   }); 
+});
 
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
