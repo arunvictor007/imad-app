@@ -9,7 +9,7 @@ var config=
     user:'arunvictor007',
     password:process.env.DB_PASSWORD,
     database:'arunvictor007'
-}
+};
 var pool=new Pool(config);
 app.get('/test-db',function(res,req)
 {
